@@ -58,5 +58,5 @@ sudo apt install breezeenhanced
 
 ![Exception](screenshots/Exception.png?raw=true "Exception")
 
-![Animation](screenshots/Animation.gif?raw=true "Animation")[屏幕录像_20250809_183520.webm](https://github.com/user-attachments/assets/3adbca91-4e00-49a2-b15d-e4f4376fa249)
+[button-close.webm](https://github.com/user-attachments/assets/22f1fd2c-b823-4d2e-b5f1-603f29c5f63e)
 
