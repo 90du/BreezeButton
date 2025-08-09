@@ -206,65 +206,96 @@ namespace Breeze
                 case DecorationButtonType::Close:
                 {
                     if (!d || d->internalSettings()->macOSButtons()) {
-                        QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
+                        QLinearGradient grad(QPointF(9, 2), QPointF(9,16 ));
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
                         {
-                            grad.setColorAt(0, isInactive ? inactiveCol
-                                                          : QColor(255, 92, 87));
-                            grad.setColorAt(1, isInactive ? inactiveCol
-                                                          : QColor(233, 84, 79));
+                            grad.setColorAt(0, isInactive ? inactiveCol  : QColor(255, 95, 87));
+                            grad.setColorAt(1, isInactive ? inactiveCol  : QColor(255, 95, 87));
                         }
                         else
                         {
-                            grad.setColorAt(0, isInactive ? inactiveCol
-                                                          : QColor(250, 100, 102));
-                            grad.setColorAt(1, isInactive ? inactiveCol
-                                                          : QColor(230, 92, 94));
+                            grad.setColorAt(0, isInactive ? inactiveCol  : QColor(255, 95, 87));
+                            grad.setColorAt(1, isInactive ? inactiveCol  : QColor(255, 95, 87));
                         }
                         painter->setBrush(QBrush(grad));
                         painter->setPen(Qt::NoPen);
-                        painter->drawEllipse(QRectF(2, 2, 14, 14));
+                        painter->setBrush(QColor("#e1463f"));
+                        painter->drawEllipse(QRectF(1,1 , 17, 17));
+                        painter->setBrush(QColor("#ff5f57"));
+                        painter->drawEllipse(QRectF(2, 2, 15, 15));
+                        
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
                             painter->setBrush(backgroundColor);
-                            qreal r = static_cast<qreal>(7)
-                                      + (isPressed() ? 0.0
-                                         : static_cast<qreal>(2) * m_animation->currentValue().toReal());
-                            QPointF c(static_cast<qreal>(9), static_cast<qreal>(9));
-                            painter->drawEllipse(c, r, r);
+
+                           // qreal r = static_cast<qreal>(7) + (isPressed() ? 0.0: static_cast<qreal>(2) * m_animation->currentValue().toReal());
+
+                           // QPointF c(static_cast<qreal>(9), static_cast<qreal>(9));
+                           // painter->drawEllipse(c, r, r);
+
+                        painter->setPen(Qt::NoPen);
+                        painter->setBrush(QColor("#e1463f"));
+                        painter->drawEllipse(QRectF(1,1 , 17, 17));
+                        painter->setBrush(QColor("#ff5f57"));
+                        painter->drawEllipse(QRectF(2, 2, 15, 15));
+                        painter->setBrush(QColor("#9f1d2b"));
+                        painter->drawEllipse(QRectF(6.5,6.5,6.5 ,6.5));
+
                         }
                     }
+                    else if(isPressed()) {
+
+                            painter->setPen(Qt::NoPen);
+                            painter->setBrush(QColor("#e1463f"));
+                            painter->drawEllipse(QRectF(1,1 , 17, 17));
+                            painter->setBrush(QColor("#ff5f57"));
+                            painter->drawEllipse(QRectF(2, 2, 15, 15));
+                            painter->setBrush(QColor("#9f1d2b"));
+                            painter->drawEllipse(QRectF(6.5, 6.5, 6.5, 6.5));
+
+
+                    }
+
+                    
                     else {
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
                             painter->setBrush(backgroundColor);
                             painter->drawEllipse(QRectF(0, 0, 18, 18));
+
                         }
                         painter->setPen(pen);
                         painter->setBrush(Qt::NoBrush);
 
                         painter->drawLine(QPointF(5, 5), QPointF(13, 13));
                         painter->drawLine(QPointF(5, 13), QPointF(13, 5));
+
+
+
                     }
                     break;
                 }
 
                 case DecorationButtonType::Maximize:
                 {
-                    if (!d || d->internalSettings()->macOSButtons()) {
+                    if (!d || d->internalSettings()->macOSButtons())
+                    {
+
                         QLinearGradient grad(QPointF(9, 2), QPointF(9, 16));
+
+
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
                         {
                             grad.setColorAt(0, isChecked() ? isInactive ? inactiveCol
                                                                         : QColor(67, 198, 176)
                                                            : isInactive ? inactiveCol
-                                                                        : QColor(40, 211, 63));
+                                                                        : QColor(40, 201, 64));
                             grad.setColorAt(1, isChecked() ? isInactive ? inactiveCol
-                                                                        : QColor(60, 178, 159)
+                                                                        : QColor(67, 198, 176)
                                                            : isInactive ? inactiveCol
-                                                                        : QColor(36, 191, 57));
+                                                                        : QColor(40, 201, 64));
                         }
                         else
                         {
@@ -277,18 +308,33 @@ namespace Breeze
                                                            : isInactive ? inactiveCol
                                                                         : QColor(111, 178, 60));
                         }
+
+
                         painter->setBrush(QBrush(grad));
                         painter->setPen(Qt::NoPen);
-                        painter->drawEllipse(QRectF(2, 2, 14, 14));
+                        painter->setBrush(QColor("#30ab2c"));
+                        painter->drawEllipse(QRectF(1,1 , 17, 17));
+                         painter->setBrush(QColor("#28c940"));
+                        painter->drawEllipse(QRectF(2, 2, 15, 15));
+                        
+                        
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
-                            painter->setBrush(backgroundColor);
-                            qreal r = static_cast<qreal>(7)
-                                      + (isPressed() ? 0.0
-                                         : static_cast<qreal>(2) * m_animation->currentValue().toReal());
-                            QPointF c(static_cast<qreal>(9), static_cast<qreal>(9));
-                            painter->drawEllipse(c, r, r);
+                           // painter->setBrush(backgroundColor);
+                           // qreal r = static_cast<qreal>(7)
+                                     // + (isPressed() ? 0.0
+                                      //   : static_cast<qreal>(2) * m_animation->currentValue().toReal());
+                           // QPointF c(static_cast<qreal>(9), static_cast<qreal>(9));
+                           // painter->drawEllipse(c, r, r);
+                            painter->setBrush(QColor("#30ab2c"));
+                            painter->drawEllipse(QRectF(1,1 , 17, 17));
+                            painter->setBrush(QColor("#28c940"));
+                            painter->drawEllipse(QRectF(2, 2, 15, 15));
+                            painter->setBrush(QColor("#0b7407"));
+                            painter->drawEllipse(QRectF(6.5, 6.5, 6.5, 6.5));
+
+
                         }
                     }
                     else {
@@ -326,29 +372,41 @@ namespace Breeze
                         if (d && qGray(d->titleBarColor().rgb()) > 100)
                         { // yellow isn't good with light backgrounds
                             grad.setColorAt(0, isInactive ? inactiveCol
-                                                          : QColor(243, 176, 43));
+                                                          : QColor(254, 189, 46));
                             grad.setColorAt(1, isInactive ? inactiveCol
-                                                          : QColor(223, 162, 39));
+                                                          : QColor(254, 189, 46));
                         }
                         else
                         {
                             grad.setColorAt(0, isInactive ? inactiveCol
                                                           : QColor(237, 198, 81));
                             grad.setColorAt(1, isInactive ? inactiveCol
-                                                          : QColor(217, 181, 74));
+                                                          : QColor(237, 198, 81));
                         }
                         painter->setBrush(QBrush(grad));
                         painter->setPen(Qt::NoPen);
-                        painter->drawEllipse(QRectF(2, 2, 14, 14));
+                        painter->setBrush(QColor("#dfa023"));
+                        painter->drawEllipse(QRectF(1,1 , 17, 17));
+                        painter->setBrush(QColor("#febd2e"));
+                        painter->drawEllipse(QRectF(2, 2, 15, 15));
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
-                            painter->setBrush(backgroundColor);
-                            qreal r = static_cast<qreal>(7)
-                                      + (isPressed() ? 0.0
-                                         : static_cast<qreal>(2) * m_animation->currentValue().toReal());
-                            QPointF c(static_cast<qreal>(9), static_cast<qreal>(9));
-                            painter->drawEllipse(c, r, r);
+                           // painter->setBrush(backgroundColor);
+                           // qreal r = static_cast<qreal>(7)
+                            //          + (isPressed() ? 0.0
+                            //             : static_cast<qreal>(2) * m_animation->currentValue().toReal());
+                            //QPointF c(static_cast<qreal>(9), static_cast<qreal>(9));
+                           // painter->drawEllipse(c, r, r);
+
+                            painter->setBrush(QColor("#dfa023"));
+                            painter->drawEllipse(QRectF(1,1 , 17, 17));
+                            painter->setBrush(QColor("#febd2e"));
+                            painter->drawEllipse(QRectF(2, 2, 15, 15));
+                            painter->setBrush(QColor("#a16115"));
+                            painter->drawEllipse(QRectF(6.5, 6.5, 6.5, 6.5));
+
+
                         }
                     }
                     else {
@@ -397,6 +455,7 @@ namespace Breeze
                             painter->drawEllipse(QRectF(0, 0, 18, 18));
                         else {
                             painter->drawEllipse(QRectF(2, 2, 14, 14));
+                            painter->drawEllipse(QRectF(1,1 , 15, 15));
                             if (backgroundColor.isValid())
                             {
                                 painter->setPen(Qt::NoPen);
@@ -413,7 +472,7 @@ namespace Breeze
                         if ((!macOSBtn  || isPressed()) && backgroundColor.isValid())
                         {
                             painter->setBrush(backgroundColor);
-                            painter->drawEllipse(QRectF(0, 0, 18, 18));
+                            painter->drawEllipse(QRectF(0,0 ,18,18));
                         }
                         painter->setBrush(foregroundColor);
 
@@ -477,6 +536,7 @@ namespace Breeze
                             painter->drawEllipse(QRectF(0, 0, 18, 18));
                         else {
                             painter->drawEllipse(QRectF(2, 2, 14, 14));
+                            painter->drawEllipse(QRectF(1,1 , 15, 15));
                             if (backgroundColor.isValid())
                             {
                                 painter->setPen(Qt::NoPen);
