@@ -45,7 +45,7 @@ After the installation, restart KWin by logging out and in. Then, BreezeEnhanced
 
 <img width="858" height="1002" alt="dark" src="https://github.com/user-attachments/assets/e7e238d2-331c-4e2b-b2be-585fcf653c88" />
 
+[vid.webm](https://github.com/user-attachments/assets/52ec0c76-79b2-4a45-86e9-b03f18a133f9)
 
-[button.webm](https://github.com/user-attachments/assets/484131a7-6521-4f39-9a40-dc8bca3835d3)
 
 
