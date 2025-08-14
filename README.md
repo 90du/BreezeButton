@@ -15,7 +15,7 @@ BreezeEnhanced is a fork of KDE Breeze decoration with the following changes:
  * Opaqueness, opacity override and flatness are added to the exception list properties.
  * The title-bar font is set independently of the KDE font settings (for use outside KDE).
 
-Please note that BreezeEnhanced is not related to the Breeze widget style. In fact, it is made to match various themes of the [Kvantum](https://github.com/tsujan/Kvantum) widget style but it works with all styles.
+Breeze is very beautiful by default, you just need to change the color you like
 
 ## Credits:
 
