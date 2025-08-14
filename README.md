@@ -1,6 +1,9 @@
-# BreezeEnhanced
+# BreezeButton
 
 ## Overview
+BreezeButtonis a fork of BreezeEnhanced with the following changes:
+
+ * Redesigned macOS like button
 
 BreezeEnhanced is a fork of KDE Breeze decoration with the following changes:
 
@@ -35,28 +38,13 @@ sudo make install
 ```
 After the installation, restart KWin by logging out and in. Then, BreezeEnhanced will appear in *System Settings &rarr; Application Style &rarr; Window Decorations*.
 
-### Installation with package manager
 
-Users of Arch and its derivatives can install breeze-enhanced-git from AUR.
+## ScreenShot
+<img width="858" height="1002" alt="light" src="https://github.com/user-attachments/assets/d5f51d63-ef7b-4b99-b481-96864f374de5" />
 
-Users of OpenSUSE Tumbleweed can do (thanks to trmdi at GitHub):
-```sh
-sudo zypper ar obs://home:trmdi trmdi
-sudo zypper in -r trmdi BreezeEnhanced
-```
 
-Users of Ubuntu can do (thanks to krisives at GitHub):
-```sh
-sudo add-apt-repository ppa:krisives/breezeenhanced
-sudo apt-get update
-sudo apt install breezeenhanced
-```
+<img width="858" height="1002" alt="dark" src="https://github.com/user-attachments/assets/e7e238d2-331c-4e2b-b2be-585fcf653c88" />
 
-## Screenshots:
-
-![Settings](screenshots/Settings.png?raw=true "Settings")
-
-![Exception](screenshots/Exception.png?raw=true "Exception")
 
 [button.webm](https://github.com/user-attachments/assets/484131a7-6521-4f39-9a40-dc8bca3835d3)
 
