@@ -199,6 +199,8 @@ namespace Breeze
             pen.setCapStyle(Qt::RoundCap);
             pen.setJoinStyle(Qt::MiterJoin);
             pen.setWidthF(PenWidth::Symbol*qMax((qreal)1.0, 20/width));
+            painter->setPen(pen);
+            painter->setBrush(Qt::NoBrush);
 
             switch (type())
             {
@@ -261,15 +263,54 @@ namespace Breeze
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
-                            painter->setBrush(backgroundColor);
+                            painter->setBrush(Qt::NoBrush);
                             painter->drawEllipse(QRectF(0, 0, 18, 18));
 
                         }
-                        painter->setPen(pen);
-                        painter->setBrush(Qt::NoBrush);
 
-                        painter->drawLine(QPointF(5, 5), QPointF(13, 13));
-                        painter->drawLine(QPointF(5, 13), QPointF(13, 5));
+
+                        if(isHovered())
+                        {
+
+                            painter->setPen(Qt::NoPen);
+                            painter->setBrush(QColor("#FF0000"));
+                            painter->drawEllipse(QRectF(0, 0, 18, 18));
+                            pen.setColor(QColor("#ffffff"));
+
+                            painter->setPen(pen);
+                            painter->drawLine(QPointF(5, 5), QPointF(13, 13));
+                            painter->drawLine(QPointF(5, 13), QPointF(13, 5));
+                        }
+
+                       else if(isChecked())
+                        {
+
+                            painter->setPen(Qt::NoPen);
+                            painter->setBrush(QColor("#FF0000"));
+                            painter->drawEllipse(QRectF(0, 0, 18, 18));
+                            pen.setColor(QColor("#ffffff"));
+
+                            painter->setPen(pen);
+                            painter->drawLine(QPointF(3, 3), QPointF(15, 15));
+                            painter->drawLine(QPointF(3, 15), QPointF(15, 3));
+
+                        }
+
+                        else
+
+                        {
+
+
+                            painter->setPen(Qt::NoPen);
+                            painter->setBrush(QColor("#1E90FF"));
+                            painter->drawEllipse(QRectF(0, 0, 18, 18));
+                            pen.setColor(QColor("#ffffff"));
+
+                            painter->setPen(pen);
+                            painter->drawLine(QPointF(5, 5), QPointF(13, 13));
+                            painter->drawLine(QPointF(5, 13), QPointF(13, 5));
+                        }
+
 
 
 
@@ -326,32 +367,37 @@ namespace Breeze
                         }
 
                     }
-                    else {
+                    else
+                    {
+
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
                             painter->setBrush(backgroundColor);
                             painter->drawEllipse(QRectF(0, 0, 18, 18));
+
+                        }
+                        if (isHovered()){
+
+                            painter->setPen(pen);
+                            painter->drawPolyline(QPolygonF()<< QPointF(5, 5) << QPointF(5, 13)) ;
+                            painter->drawPolyline(QPolygonF()<< QPointF(13, 5) << QPointF(13, 13));
                         }
 
-                        if (isHovered())
-                            pen.setWidthF(1.2*qMax((qreal)1.0, 20/width));
-                        painter->setPen(pen);
-                        painter->setBrush(Qt::NoBrush);
+                        else if (isChecked()){
 
-                        painter->drawPolyline(QPolygonF()
-                                                << QPointF(5, 8) << QPointF(5, 13) << QPointF(10, 13));
-                        if (isChecked())
-                            painter->drawRect(QRectF(8.0, 5.0, 5.0, 5.0));
-                        else {
-                            painter->drawPolyline(QPolygonF()
-                                                  << QPointF(8, 5) << QPointF(13, 5) << QPointF(13, 10));
+                               painter->setPen(pen);
+                               painter->drawPolyline(QPolygonF()<< QPointF(5, 5) << QPointF(5, 13)) ;
+                               painter->drawPolyline(QPolygonF()<< QPointF(13, 5) << QPointF(13, 13));
+
                         }
 
-                        if (isHovered())
-                            pen.setWidthF(PenWidth::Symbol*qMax((qreal)1.0, 20/width));
+                        painter->drawPolyline(QPolygonF()<< QPointF(5, 5) << QPointF(5, 13)) ;
+                        painter->drawPolyline(QPolygonF()<< QPointF(13, 5) << QPointF(13, 13));
+
+
                     }
-                    break;
+                        break;
                 }
 
                 case DecorationButtonType::Minimize:
@@ -395,25 +441,34 @@ namespace Breeze
 
                         }
                     }
-                    else {
+                    else
+                    {
                         if (backgroundColor.isValid())
                         {
                             painter->setPen(Qt::NoPen);
                             painter->setBrush(backgroundColor);
                             painter->drawEllipse(QRectF(0, 0, 18, 18));
+
+                        }
+                        if (isHovered())
+                        {
+                            painter->setPen(pen);
+                            painter->drawLine(QPointF(4, 9), QPointF(14, 9));
+
                         }
 
-                        if (isHovered())
-                            pen.setWidthF(1.2*qMax((qreal)1.0, 20/width));
+
+                        else if (isChecked())
+                            {
+
+                                painter->setPen(pen);
+                                painter->drawLine(QPointF(4, 9), QPointF(14, 9));
+                            }
                         painter->setPen(pen);
-                        painter->setBrush(Qt::NoBrush);
-
                         painter->drawLine(QPointF(4, 9), QPointF(14, 9));
-
-                        if (isHovered())
-                            pen.setWidthF(PenWidth::Symbol*qMax((qreal)1.0, 20/width));
                     }
-                    break;
+
+                      break;
                 }
 
                 case DecorationButtonType::OnAllDesktops:
